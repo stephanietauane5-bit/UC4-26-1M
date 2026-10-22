@@ -1,0 +1,54 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Personagem = void 0;
+class Personagem {
+    // Atributos
+    nome;
+    vida = 50;
+    forca;
+    arma;
+    constructor(nome, forca, arma) {
+        this.nome = nome;
+        this.forca = forca;
+        this.arma = arma;
+    }
+    curar() {
+        this.vida += 10;
+        if (this.vida > 100) {
+            this.vida = 100;
+        }
+    }
+    perderVida(dano) {
+        this.vida -= dano;
+        if (this.vida < 0) {
+            this.vida = 0;
+        }
+    }
+    curarOutroPersonagem(per) {
+        per.vida += 10;
+        if (per.vida > 100) {
+            per.vida = 100;
+        }
+        console.log(`O personagem ${per.nome} foi curado por ${this.nome}.
+            \n Vida de ${per.nome}: ${per.vida}.`);
+    }
+    // Criem um método chamado "Atacar" que faça um personagem tirar a vida do outro
+    atacarAquelePersonagem(per) {
+        per.vida -= this.arma.ataque;
+        if (per.vida < 0) {
+            per.vida = 0;
+        }
+        console.log(`O personagem ${per.nome} foi atacado por ${this.nome}.
+            \n Vida de ${per.nome}: ${per.vida}.`);
+    }
+}
+exports.Personagem = Personagem;
+// 1)
+// Crie uma nova classe chamada "Arma"
+// "Arma" deve ter nome e ataque
+// Não esquece do constructor
+// 2)
+// Dentro da classe "Personagem", crie o atributo "Arma" (do tipo Arma)
+// Chame ele no constructor de "Personagem"
+// 3)
+// Modifique o método "Atacar" da classe "Personagem" para usar o dano da Arma
