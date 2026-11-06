@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Carro_1 = require("./Carro");
+const contaBancaria_1 = require("./contaBancaria");
+const Livro_1 = require("./Livro");
+const livro = new Livro_1.Livro("Carrie, a estranha");
+livro.exibirTitulo();
+const conta = new contaBancaria_1.contaBancaria(100);
+conta.depositar(150);
+conta.consultarSaldo();
+const carro = new Carro_1.Carro();
+carro.acelerar();
+carro.exibirVelocidade();
