@@ -1,4 +1,8 @@
-export class Guerreiro {
+import { IAtacante } from "./IAtacante";
+
+// Eu estou dizendo que qualquer Guerreiro deve seguir as regras que a 
+// interface IAtacante criar 
+export class Guerreiro implements IAtacante{
 
   public nome: string;
 
